@@ -1,0 +1,7 @@
+HTML, CSS, JS 개념 강의를 듣고 처음 실습을 해본 코드이다.
+클라이언트가 창의 크기를 조절할 때 달라지는 모습이 인상깊었다.
+나중에 개발할 때 중요하게 생각해야 할 부분이라고 생각한다.
+
+This is my first practice code that I write after lecture finished.
+That was really interested When client control the window size.
+I think that it is important when developing later.
