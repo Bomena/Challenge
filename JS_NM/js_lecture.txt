@@ -1,1 +1,4 @@
 js_lecture
+
+I learn about data type, variables, const, let, var, Booleans and Array today.
+It's so interesting that difference between JS and Python.
