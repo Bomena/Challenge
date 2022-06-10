@@ -1,7 +1,7 @@
-const a = 9;
-let myName = "spring";
-console.log(a + 2);
-console.log(myName);
+const amIPretty = true;
+console.log(amIPretty); //true
 
-myName = "bom";
-console.log(myName);
+const brain = null;
+let something;
+console.log(brain);     //null
+console.log(something); //value exist, but undefined
