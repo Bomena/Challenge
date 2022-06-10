@@ -1,13 +1,32 @@
-// Array
-const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
+// Object
+const player = {
+    name: "spring",
+    points: 10,
+    fat: false,
+}
+//console.log(player);
+//console.log(player.name);
 
-// Get Item forom Array
-console.log(daysOfWeek[5]);
+// Change name -> 내부에 있는 것을 바꿈. 객체 자체를 바꾸는 것이 아님
+player.name = "bom";
+//console.log(player.name);
 
-// Add one more day to the array
-daysOfWeek.push("sun");
-console.log(daysOfWeek);
+// Append lastName
+player.lastName = "potato";
+//console.log(player);
 
-const toBuy = ["potato", "tomato", "pizza"];
-toBuy.push("kimbab");
-console.log(toBuy);
+function sayHello(nameOfPerson, age) {
+    console.log("Hello my name is " + nameOfPerson + " and I'm " + age);
+}
+//sayHello("spring", 22);
+//sayHello("bom", 22);
+
+function plus(a, b) {
+    console.log(a + b);
+}
+//plus(3, 2);
+
+function divide(a, b) {
+    console.log(a / b);
+}
+//divide(4, 2);
