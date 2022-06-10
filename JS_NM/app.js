@@ -1,4 +1,7 @@
 const a = 9;
-const myName = "spring";
+let myName = "spring";
 console.log(a + 2);
-console.log(myName)
+console.log(myName);
+
+myName = "bom";
+console.log(myName);
