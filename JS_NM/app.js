@@ -1,9 +1,11 @@
-// add and remove class
-// toggle -> find classname
-const h1 = document.querySelector(".hello h1");
+// get information from input(without refresh)
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
 
-function handleTitleClick() {
-    h1.classList.toggle("clicked");
+
+function onLoginSubmit(info) {
+    info.preventDefault();
+    console.log(loginInput.value);
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginForm.addEventListener("submit", onLoginSubmit);
