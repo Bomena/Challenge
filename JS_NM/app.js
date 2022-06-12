@@ -1,15 +1,13 @@
-// When start event, run function.
+// add and remove class
 const h1 = document.querySelector(".hello h1");
 
 function handleTitleClick() {
-    const currentColor = h1.style.color;
-    let newColor;
-    if(currentColor === "blue"){
-        newColor = "tomato";
+    const clickedClass = "clicked";
+    if (h1.classList.contains(clickedClass)) {
+        h1.classList.remove(clickedClass);
     } else {
-        newColor = "blue";
+        h1.classList.add(clickedClass);
     }
-    h1.style.color = newColor;
 }
 
 
