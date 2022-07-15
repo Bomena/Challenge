@@ -27,7 +27,36 @@
         <script type="module" src="app.js"></script>
     </head>
     <body>
-        <h1 class="name">Front Camera</h1>
-        <img id="ig" class="pic" src="" width="720" height="480"> 
+        <div id="grid">
+            <div>
+                <h2 class="camera">Front Camera</h2>
+                <img id="ig" class="pic" src="" width="864" height="576">
+                <h2 class="data">Data</h2>
+                <div class="table">
+                    <div>Auto</div>
+                    <div>waypoint</div>
+                    <div>GPS Time</div>
+                    <div>Latitude</div>
+                    <div>Longitude</div>
+                    <div>Altitude</div>
+                </div>
+                    <div id="line">
+                    <div class="table">
+                        <div id="isAuto">N/A</div>
+                        <div id="wayPoint">N/A</div>
+                        <div id="gpsTime">N/A</div>
+                        <div id="latitude">N/A</div>
+                        <div id="longitude">N/A</div>
+                        <div id="altitude">N/A</div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <h2 class="course">Course</h2>
+                <img id="rv" class="rviz" src="" width="400" height="576">
+            </div>
+        </div>
     </body>
 </html>
