@@ -41,6 +41,36 @@ let altitude = new ROSLIB.Topic({
     messageType : 'std_msgs/String'
 });
 
+let roll = new ROSLIB.Topic({
+    ros : ros,
+    name : 'roll',
+    messageType : 'std_msgs/String'
+});
+
+let pitch = new ROSLIB.Topic({
+    ros : ros,
+    name : 'pitch',
+    messageType : 'std_msgs/String'
+});
+
+let yaw = new ROSLIB.Topic({
+    ros : ros,
+    name : 'yaw',
+    messageType : 'std_msgs/String'
+});
+
+let state = new ROSLIB.Topic({
+    ros : ros,
+    name : 'state',
+    messageType : 'std_msgs/String'
+});
+
+let speed = new ROSLIB.Topic({
+    ros : ros,
+    name : 'speed',
+    messageType : 'std_msgs/String'
+});
+
 let heart = new ROSLIB.Topic({
     ros : ros,
     name : 'img',
@@ -54,6 +84,7 @@ heart.subscribe(function(message) {
     image.src = "data:image/jpg;base64, " + message.data;
     document.getElementById("ig").src = image.src;
 });
+
 
 isAuto.subscribe(function(message) {
     console.log("Is Auto?");
@@ -75,18 +106,48 @@ gpsTime.subscribe(function(message) {
 
 latitude.subscribe(function(message) {
     console.log("latitude?");
-    let latitudeText = message.data;
+    let latitudeText = message.data + "deg";
     document.getElementById("latitude").innerHTML = latitudeText;
 });
 
 longitude.subscribe(function(message) {
     console.log("longitude?");
-    let longitudeText = message.data;
+    let longitudeText = message.data + "deg";
     document.getElementById("longitude").innerHTML = longitudeText;
 });
 
 altitude.subscribe(function(message) {
-    console.log("altitude");
-    let altitudeText = message.data;
+    console.log("altitude?");
+    let altitudeText = message.data + "m";
     document.getElementById("altitude").innerHTML = altitudeText;
+});
+
+roll.subscribe(function(message) {
+    console.log("roll?");
+    let rollText = message.data + "deg";
+    document.getElementById("roll").innerHTML = rollText;
+});
+
+pitch.subscribe(function(message) {
+    console.log("pitch?");
+    let pitchText = message.data + "deg";
+    document.getElementById("pitch").innerHTML = pitchText;
+});
+
+yaw.subscribe(function(message) {
+    console.log("yaw?");
+    let yawText = message.data + "deg";
+    document.getElementById("yaw").innerHTML = yawText;
+});
+
+state.subscribe(function(message) {
+    console.log("state?");
+    let stateText = message.data;
+    document.getElementById("state").innerHTML = stateText;
+});
+
+speed.subscribe(function(message) {
+    console.log("speed?");
+    let speedText = message.data + "m/s";
+    document.getElementById("speed").innerHTML = speedText;
 });

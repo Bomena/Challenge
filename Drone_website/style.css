@@ -30,7 +30,7 @@ canvas {
     border-radius: 5px;
 }
 
-.rviz {
+.gmap {
     display: block;
     margin: auto;
     padding-top: 20px;
@@ -39,41 +39,60 @@ canvas {
 
 #grid {
     display: grid;
-    grid-template-columns: 925px 441px;
+    grid-template-columns: 1.9fr 1fr 1fr;
 }
 
-#line {
+#dataLine {
     display: block;
     margin: auto;
-    margin-top: -10px;
+    padding-top: 20px;
     border-width: 1px;
     border-radius: 10px;
-    height: 100px;
+    height: 90px;
     width: 864px;
     border-color: aliceblue;
     border-style: solid;
 }
 
-.camera {
+#atitudeLine {
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+    border-width: 1px;
+    border-radius: 10px;
+    height: 90px;
+    width: 450px;
+    border-color: aliceblue;
+    border-style: solid;
+}
+
+#statusLine {
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+    border-width: 1px;
+    border-radius: 10px;
+    height: 90px;
+    width: 450px;
+    border-color: aliceblue;
+    border-style: solid;
+}
+
+.title {
     display: block;
     text-align: center;
     color: aliceblue;
-    padding-top: 20px;
+    padding-top: 50px;
+    padding-bottom: 30px;
 }
 
-.course {
+
+
+.subTitle {
     display: block;
     color: aliceblue;
-    padding-top: 20px;
-    text-align: center;
-
-}
-
-.data {
-    display: block;
-    color: aliceblue;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 50px;
+    padding-bottom: 50px;
     text-align: center;
 }
 
@@ -84,7 +103,46 @@ canvas {
     text-align: center;
     margin: auto;
     width: 864px;
-    padding-top: 3%;
-    padding-bottom: 3%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+
+.atitude {
+    display: grid;
+    color: aliceblue;
+    text-align: center;
+    margin: auto;
+    width: 450px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.status {
+    display: grid;
+    color: aliceblue;
+    text-align: center;
+    margin: auto;
+    width: 450px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.line {
+    display: block;
+    border-color: aliceblue;
+    border-style: solid;
+    border-right-width: 1px;
+    height: 50px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+
+#isAuto, #wayPoint, #gpsTime, #latitude, #longitude, #roll, #pitch, #state {
+    display: block;
+    border-color: aliceblue;
+    border-style: solid;
+    border-right-width: 1px;
+    height: 25px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+
