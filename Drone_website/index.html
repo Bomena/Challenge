@@ -8,23 +8,10 @@
         <title>Visualization</title>
         <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
         <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-        <script type="text/javascript">
-            this.ros = new ROSLIB.Ros({
-                url : 'ws://165.246.139.32:9090'
-            });
-            this.ros.on('connection', function() {
-                console.log('Connected to websocket server.');
-            });
-            this.ros.on('error', function(error) {
-                console.log('Error connecting to websocket server: ', error);
-            });
-            this.ros.on('close', function() {
-                console.log('Connection to websocket server closed.');
-            });
-
-
-        </script>
-        <script type="module" src="app.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="module" src="data.js"></script>
+        <script type="module" src="atitude.js"></script>
+        <script type="module" src="status.js"></script>
     </head>
     <body>
         <div id="grid">
