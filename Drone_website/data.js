@@ -50,7 +50,7 @@ wayPoint.subscribe(function(message) {
 
 
 gpsTime.subscribe(function(message) {
-    //console.log("gps time?");
+    console.log("gps time?");
     let gpsTimeText = message.data;
     document.getElementById("gpsTime").innerHTML = gpsTimeText;
 });

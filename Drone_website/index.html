@@ -5,12 +5,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
         <link rel="stylesheet" href="style.css?afterwe">
-        <link rel="stylesheet" href="https://js.arcgis.com/3.41/esri/css/esri.css">
-        <!-- 
-        ArcGIS API for JavaScript, https://js.arcgis.com
-        For more information about the widget_locate sample, read the original sample description at developers.arcgis.com.
-        https://developers.arcgis.com/javascript/3/jssamples/widget_locate.html  
-        -->
+        <!-- leaflet css  -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
         <title>Visualization</title>
         <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
         <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
@@ -19,8 +15,6 @@
         <script type="module" src="atitude.js"></script>
         <script type="module" src="status.js"></script>
         <script src="record.js"></script>
-        <script src="https://js.arcgis.com/3.41/"></script>
-        <script type="module" src="map.js"></script>
     </head>
     <body>
         <div class="grid">
@@ -89,3 +83,36 @@
         </div>
     </body>
 </html>
+
+<!-- leaflet js  -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    let map = L.map('map').setView([37.38520, 126.6555], 18);
+
+    //osm layer
+    let osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+    osm.addTo(map);
+
+    let marker, circle;
+
+    function getPosition(){
+        // console.log(position)
+        /*let lat = this.document.getElementById("latitude").innerHTML
+        let long = this.document.getElementById("longitude").innerHTML
+        let accuracy = position.coords.accuracy
+        if(marker) {
+            map.removeLayer(marker)
+        }
+        if(circle) {
+            map.removeLayer(circle)
+        }*/
+        marker = L.marker([37.3844, 126.654])
+        circle = L.circle([37.3844, 126.654], {radius: 30})
+        let featureGroup = L.featureGroup([marker, circle]).addTo(map)
+        map.fitBounds(featureGroup.getBounds())
+        console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
+    }
+    getPosition();
+</script>
