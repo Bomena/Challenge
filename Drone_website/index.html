@@ -2,25 +2,37 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css?after">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+        <link rel="stylesheet" href="style.css?afterwe">
+        <link rel="stylesheet" href="https://js.arcgis.com/3.41/esri/css/esri.css">
+        <!-- 
+        ArcGIS API for JavaScript, https://js.arcgis.com
+        For more information about the widget_locate sample, read the original sample description at developers.arcgis.com.
+        https://developers.arcgis.com/javascript/3/jssamples/widget_locate.html  
+        -->
         <title>Visualization</title>
         <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
         <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="server.js"></script>
         <script type="module" src="data.js"></script>
         <script type="module" src="atitude.js"></script>
         <script type="module" src="status.js"></script>
+        <script src="record.js"></script>
+        <script src="https://js.arcgis.com/3.41/"></script>
+        <script type="module" src="map.js"></script>
     </head>
     <body>
-        <div id="grid">
+        <div class="grid">
             <div>
-                <h2 class="title">Front Camera</h2>
+                <h1 class="title">Front Camera</h1>
                 <img id="ig" class="pic" src="" width="864" height="576">
-                <h2 class="subTitle">Data</h2>
+                <div id="record">
+                    <h1 id="plus" class="subTitle">Data</h1>
+                    <input type="button" id="btn" class="notRecord" value="log" onclick="recordingStart()">
+                </div>
                 <div id="dataLine">
-                    <div class="table">
+                    <div id="size" class="table">
                         <div class="line">Auto</div>
                         <div class="line">Waypoint</div>
                         <div class="line">GPS Time</div>
@@ -39,34 +51,38 @@
                 </div>
             </div>
             <div>
-                <h2 class="title">Map</h2>
-                <img id="map" class="pic" src="map.png" width="450" height="576">
-                <h2 class="subTitle">Atitude</h2>
-                <div id="atitudeLine">
-                    <div class="atitude">
-                        <div class="line">Roll</div>
-                        <div class="line">Pitch</div>
-                        <div>Yaw</div>
-                    </div>
-                    <div class="atitude">
-                        <div id="roll">N/A</div>
-                        <div id="pitch">N/A</div>
-                        <div id="yaw">N/A</div>
-                    </div>
+                <h1 class="title">Map</h1>
+                <div id="map" class="map">
+                    <div id="LocateButton"></div>
                 </div>
-            </div>
-            <div>
-                <h2 class="title">Voxel Map</h2>
-                <img id="voxel" class="gmap" src="" width="450" height="576">
-                <h2 class="subTitle">Status</h2>
-                <div id="statusLine">
-                    <div class="status">
-                        <div class="line">State</div>
-                        <div>Speed</div>
+                <div id="grid2" class="grid">
+                    <div>
+                        <h1 class="subTitle">Attitude</h1>
+                        <div id="attitudeLine">
+                            <div id="size" class="attitude">
+                                <div class="line">Roll</div>
+                                <div class="line">Pitch</div>
+                                <div>Yaw</div>
+                            </div> 
+                            <div class="attitude">
+                                <div id="roll">N/A</div>
+                                <div id="pitch">N/A</div>
+                                <div id="yaw">N/A</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="status">
-                        <div id="state">N/A</div>
-                        <div id="speed">N/A</div>
+                    <div>
+                        <h1 class="subTitle">Status</h1>
+                        <div id="statusLine">
+                            <div id="size" class="status">
+                                <div class="line">State</div>
+                                <div>Speed</div>
+                            </div>
+                        <div class="status">
+                            <div id="state">N/A</div>
+                            <div id="speed">N/A</div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
